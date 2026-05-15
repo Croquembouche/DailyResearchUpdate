@@ -1,0 +1,20 @@
+[Unit]
+Description=Daily Research Update web service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/media/william/blueicedrive/Github/DailyResearchUpdate
+Environment=NODE_ENV=production
+Environment=HOST=0.0.0.0
+Environment=PORT=3001
+Environment=PATH=/home/william/.nvm/versions/node/v22.17.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ExecStart=/home/william/.nvm/versions/node/v22.17.1/bin/node src/server.js
+Restart=on-failure
+RestartSec=5
+KillSignal=SIGINT
+TimeoutStopSec=20
+
+[Install]
+WantedBy=default.target

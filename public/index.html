@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daily Research Update</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Autonomous vehicle arXiv briefing</p>
+        <h1>Daily Research Update</h1>
+        <p class="lede">A 6:00 AM Eastern scan of new papers, summarized into short research blogs with visual explainers.</p>
+      </div>
+      <div class="actions">
+        <input id="dateInput" type="date" aria-label="Report date">
+        <button id="loadButton">Load date</button>
+        <button id="runButton" class="accent">Run now</button>
+      </div>
+    </section>
+
+    <section class="status" id="status">Loading latest report...</section>
+    <nav class="tabs" id="tabs" aria-label="Research topics"></nav>
+    <article class="report" id="report"></article>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
