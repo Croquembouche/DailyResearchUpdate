@@ -9,6 +9,7 @@ WorkingDirectory=/media/william/blueicedrive/Github/DailyResearchUpdate
 Environment=NODE_ENV=production
 Environment=HOST=0.0.0.0
 Environment=PORT=3001
+Environment=ENABLE_APP_CRON=false
 Environment=PATH=/home/william/.nvm/versions/node/v22.17.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ExecStart=/home/william/.nvm/versions/node/v22.17.1/bin/node src/server.js
 Restart=on-failure

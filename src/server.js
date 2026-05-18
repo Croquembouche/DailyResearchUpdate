@@ -25,5 +25,7 @@ app.post('/api/run-now', async () => {
 const port = Number(process.env.PORT || 3000);
 const host = process.env.HOST || '127.0.0.1';
 
-startScheduler(app.log);
+if (process.env.ENABLE_APP_CRON !== 'false') {
+  startScheduler(app.log);
+}
 await app.listen({ port, host });

@@ -32,7 +32,7 @@ function normalizeEntry(entry) {
 
 export async function fetchArxivPapers(topic, options = {}) {
   const maxResults = Number(options.maxResults || process.env.ARXIV_MAX_RESULTS || 12);
-  const lookbackDays = Number(options.lookbackDays || process.env.ARXIV_LOOKBACK_DAYS || 3);
+  const lookbackDays = Number(options.lookbackDays || process.env.ARXIV_LOOKBACK_DAYS || 7);
   const params = new URLSearchParams({
     search_query: topic.query,
     start: '0',
@@ -51,5 +51,5 @@ export async function fetchArxivPapers(topic, options = {}) {
   const entries = asArray(parsed.feed?.entry).map(normalizeEntry);
   const cutoff = Date.now() - lookbackDays * 24 * 60 * 60 * 1000;
   const recent = entries.filter((paper) => new Date(paper.published).getTime() >= cutoff);
-  return (recent.length ? recent : entries).slice(0, maxResults);
+  return recent.slice(0, maxResults);
 }

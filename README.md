@@ -2,6 +2,10 @@
 
 Local web app for daily autonomous-vehicle research briefings from arXiv. It scans recent papers for five topics, asks the local Codex CLI to synthesize each topic into a roughly 500-word blog post, and serves the results in a tabbed web interface with generated SVG explainers.
 
+Each run only considers papers published in the last 7 days. Papers already included in an earlier saved daily report are filtered out, so recurring runs do not repeat old papers.
+
+The SVG visual for each topic uses a separate 180-day arXiv scan to show field direction over the past six months: monthly paper momentum plus dominant research themes. This trend scan does not change which papers are reported in the daily digest.
+
 ## Topics
 
 - Autonomous driving algorithms

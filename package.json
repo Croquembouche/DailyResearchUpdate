@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "node src/server.js",
-    "update": "node src/runDaily.js"
+    "update": "node src/runDaily.js",
+    "regenerate-svgs": "node src/regenerateExistingSvgs.js",
+    "dedupe-reports": "node src/dedupeReports.js"
   },
   "dependencies": {
     "@fastify/static": "^7.0.4",

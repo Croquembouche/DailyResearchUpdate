@@ -1,0 +1,11 @@
+[Unit]
+Description=Run Daily Research Update every morning at 6 AM Eastern
+
+[Timer]
+OnCalendar=*-*-* 06:00:00 America/New_York
+Persistent=true
+RandomizedDelaySec=0
+Unit=daily-research-update-job.service
+
+[Install]
+WantedBy=timers.target

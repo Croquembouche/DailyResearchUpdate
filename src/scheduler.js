@@ -11,7 +11,7 @@ export function startScheduler(logger = console) {
       await runDailyUpdate();
       logger.info?.('Scheduled arXiv update finished');
     } catch (error) {
-      logger.error?.('Scheduled arXiv update failed', error);
+      logger.error?.(error, 'Scheduled arXiv update failed');
     }
   }, { timezone });
 

@@ -1,0 +1,12 @@
+[Unit]
+Description=Generate Daily Research Update report
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/media/william/blueicedrive/Github/DailyResearchUpdate
+Environment=NODE_ENV=production
+Environment=PATH=/home/william/.nvm/versions/node/v22.17.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ExecStart=/home/william/.nvm/versions/node/v22.17.1/bin/npm run update
+TimeoutStartSec=900
